@@ -37,7 +37,8 @@ public class CropPlugin extends CordovaPlugin {
 
           cordova.setActivityResultCallback(this);
           Crop.of(this.inputUri, this.outputUri)
-                  .asSquare()
+                  .withAspect(3,2)
+                  .withMaxSize(1080,1980)
                   .start(cordova.getActivity());
           return true;
       }
